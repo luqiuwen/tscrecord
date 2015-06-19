@@ -25,7 +25,6 @@ static inline uint64_t tscrecord_rdtsc(void)
 	"=a" (tsc.lo_32),
 		"=d" (tsc.hi_32));
 	return tsc.tsc_64;
-	return tsc.tsc_64;
 }
 
 struct tracepoint_s
