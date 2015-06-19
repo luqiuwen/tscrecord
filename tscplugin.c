@@ -25,7 +25,7 @@ pthread_mutex_t tscplugin_register_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 int __attribute__((destructor, used)) tscplugin_destroy()
 {
-	traceshm = NULL;
+	munmap(traceshm, sizeof(struct tracepoint_shm_s));
 	shm_unlink(shm_symbol);
 	return 0;
 }
